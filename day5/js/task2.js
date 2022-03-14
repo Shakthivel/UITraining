@@ -97,30 +97,41 @@ const TODOS = [
     }
 ];
 
-var cards = document.getElementsByClassName("card");
-var categories = document.getElementsByClassName("category");
-var statuses = document.getElementsByClassName("status");
-var description = document.getElementsByClassName("description");
-var chats = document.getElementsByClassName("chat");
-var files = document.getElementsByClassName("file");
-var profileImages = document.getElementsByClassName("user-profile");
+var rowDiv = document.getElementsByClassName('row-container');
 
 for(var i=0; i<TODOS.length;i++)
 {
-    if(TODOS[i]["isCompleted"]==true)
+    var div = document.createElement('div');
+div.setAttribute('class','card');
+var stats;
+if(TODOS[i]["isCompleted"]==true)
     {
-        statuses[i].innerHTML="&#9989;";
+        stats="&#9989;";
     }
     else{
-        statuses[i].innerHTML="&#10060";
+        stats="&#10060";
     }
-    cards[i].style.backgroundColor = TODOS[i]["topbar"];
-    categories[i].style.backgroundColor = TODOS[i]["categorycolor"];
-    categories[i].style.color = TODOS[i]["topbar"];
-    categories[i].innerHTML = TODOS[i]["category"];
-    description[i].innerHTML = TODOS[i]["description"];
-    chats[i].innerHTML = TODOS[i]["chat"];
-    files[i].innerHTML = TODOS[i]["file"];
-    profileImages[i].src = TODOS[i%3]["usr1"];
-    profileImages[i].alt = "https://www.pngitem.com/pimgs/m/20-203432_profile-icon-png-image-free-download-searchpng-ville.png";
+div.innerHTML = `
+<div class="sub-card">
+<div class="card-header">
+    <div class="category"><p>${TODOS[i]["category"]}</p></div>
+    <div class="status"><p>${stats}</p></div>
+</div>
+<div class="card-info">
+    <p class="description">${TODOS[i]["description"]}</p>
+    
+</div>
+<div class="card-footer">
+    <div class="footer-info">
+        <img src="https://cdn-icons-png.flaticon.com/512/1380/1380370.png" alt="" srcset="">
+        <p class="chat">${TODOS[i]["chat"]}</p>
+        <img src="https://cdn0.iconfinder.com/data/icons/education-volume-1-3/48/04-512.png" alt="files" srcset="">
+        <p class="file">${TODOS[i]["file"]}</p>
+    </div>
+    <img class="user-profile"src="${TODOS[i%3]["usr1"]}" alt="">
+</div>
+</div>`;
+rowDiv[0].appendChild(div);
+console.log("TEST");
 }
+
