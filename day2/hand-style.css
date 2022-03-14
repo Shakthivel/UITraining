@@ -1,0 +1,58 @@
+body{
+    background-color: skyblue;
+}
+.container{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.finger-group{
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.finger{
+    background-color: black;
+    margin:5px;
+    border-radius: 20px;
+    width:40px;
+}
+.finger1{
+    height: 120px;
+}
+.finger2{
+    height: 140px;
+}
+.finger3{
+    height: 100px;
+}
+.finger4{
+    height: 70px;
+}
+.palm{
+    height:100px;
+    width:200px;
+    background-color: black;
+    border-radius: 10px;
+}
+.wrist{
+    height: 75px;
+    width: 75px;
+    background-color: black;
+    border-radius: 0px 0px 10px 10px;
+}
+.thumb{
+    height: 120px;
+    width: 40px;
+    background-color: black;
+    border-radius:50px;
+    border:10px solid skyblue;
+    transform:rotate(65deg);
+    position: absolute;
+    margin-right:150px;
+    margin-bottom: 20px;
+}

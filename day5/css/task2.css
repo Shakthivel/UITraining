@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #f5f7f9;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 5px;
+  padding: 5px;
+  color: #55616f;
+  font-family: "Poppins";
+  font-size: large;
+}
+.heading #name {
+  font-size: x-large;
+  font-weight: 600;
+  color: #34455d;
+}
+
+.row-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.card {
+  height: 200px;
+  width: 250px;
+  padding: 10px 0px 0px 0px;
+  margin: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px grey;
+  background-color: #2765c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card .sub-card {
+  height: 180px;
+  width: 250px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .sub-card .card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.card .sub-card .card-header .category {
+  background-color: #47a4fc;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.card .sub-card .card-header .category p {
+  font-family: "Poppins";
+}
+.card .sub-card .card-info {
+  display: flex;
+  flex-direction: column;
+}
+.card .sub-card .card-info .description {
+  font-family: "Poppins";
+}
+.card .sub-card .card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.card .sub-card .card-footer .footer-info {
+  display: flex;
+  flex-direction: row;
+}
+.card .sub-card .card-footer .footer-info img {
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+}
+.card .sub-card .card-footer .footer-info p {
+  margin: 5px;
+}
+.card .sub-card .card-footer .user-profile {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  align-self: flex-end;
+}
+
+/*# sourceMappingURL=task2.css.map */

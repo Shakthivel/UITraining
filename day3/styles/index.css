@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  background-color: #021945;
+}
+
+.nav {
+  color: white;
+}
+
+@media only screen and (min-width: 601px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px;
+    justify-content: space-between;
+  }
+  .nav li {
+    display: inline;
+    margin: 10px 0px;
+    margin-left: 15px;
+    padding: 5px;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .nav #heading {
+    margin: 10px 0px;
+    margin-left: 15px;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .info {
+    width: 40%;
+    float: left;
+    align-items: center;
+    padding: 30px;
+  }
+  .info p {
+    margin: 20px;
+  }
+  .info .row-align {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .image {
+    width: 60%;
+    float: right;
+    padding: 30px;
+  }
+  .image img {
+    margin-right: 30px;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+.info .style1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 800;
+}
+.info .style2 {
+  font-size: 14px;
+  font-family: "Poppins";
+  letter-spacing: 1.3px;
+  color: #535e7e;
+}
+.info .row-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.small-button {
+  font-family: "Poppins";
+  padding: 10px 30px;
+  border-radius: 8px;
+}
+
+.button {
+  font-family: "Poppins";
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.green {
+  color: #021945;
+  background-color: #01e4d9;
+}
+
+.blue {
+  background-color: #021945;
+  color: #01e4d9;
+  border: 1px solid #01e4d9;
+}
+
+@media only screen and (max-width: 601px) {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav ul {
+    list-style-type: none;
+  }
+  .nav li {
+    margin: 10px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .nav #heading {
+    font-weight: 600;
+    margin: 10px;
+    font-size: 24px;
+  }
+
+  .info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .info p {
+    margin: 10px;
+    padding: 10px;
+  }
+  .info .row-align {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

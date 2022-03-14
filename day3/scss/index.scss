@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+$primary-color:rgb(2,25,69);
+$green-color:rgb(1,228,217);
+$smoke-white:rgb(83,94,126);
+
+$font-size-xs:12px;
+$font-size-sm:14px;
+$font-size-md:16px;
+$font-size-lg:20px;
+$font-size-xl:24px;
+$font-size-xxl:48px;
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    background-color: $primary-color;
+}
+
+.nav{
+    color:white;
+}
+
+
+@media only screen and (min-width: 601px) {
+    .nav{
+        display:flex;
+        flex-direction: row;
+        margin:20px 0px;
+        justify-content: space-between;
+            li{
+                display: inline;
+                margin:10px 0px;
+                margin-left:15px;
+                padding:5px;
+                font-family:"Roboto";
+                font-weight:500;
+                font-size:$font-size-md;
+            }
+            #heading{
+                margin:10px 0px;
+                margin-left:15px;
+                padding:5px;
+                font-weight:600;
+                font-size:$font-size-xl;
+            }
+        
+    }
+    .info{
+        width:40%;
+        float:left;
+        align-items: center;
+        padding:30px;
+        p{
+            margin:20px;
+        }
+        .row-align{
+            display:flex;
+            flex-direction:row;
+        }
+    }
+    .image{
+        width:60%;
+        float:right;
+        padding:30px;
+        img{
+            margin-right:30px;
+            width:100%;
+            object-fit: contain;
+        }
+    }
+  }
+
+.info{
+    .style1{
+        color:white;
+        font-size:$font-size-xxl;
+        font-weight: 800;
+    }
+    .style2{
+        font-size: $font-size-sm;
+        font-family:'Poppins';
+        letter-spacing:1.3px;
+        color: $smoke-white;
+    }
+    .row-align{
+        display:flex;
+        flex-direction:row;
+    }
+}
+.small-button{
+    font-family:'Poppins';
+    padding:10px 30px;
+    border-radius:8px;
+}
+.button{
+    font-family:'Poppins';
+    padding:15px 30px;
+    border-radius:8px;
+    margin:10px;
+}
+.green{
+color:$primary-color;
+background-color: $green-color;
+}
+.blue{
+    background-color:$primary-color;
+    color: $green-color;
+    border:1px solid $green-color;
+    }
+@media only screen and (max-width: 601px){
+        .nav{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            ul{
+                list-style-type: none;
+            }
+            li{
+                margin:10px;
+                font-size:$font-size-md;
+                text-align: center;
+            }
+            #heading{
+                font-weight:600;
+                margin:10px;
+                font-size:$font-size-xl;
+            }
+        }
+        .info{
+            padding:10px;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            p{
+                margin:10px;
+                padding:10px;
+            }
+            .row-align{
+                display:flex;
+                flex-direction: column;
+            }
+        }
+        
+    }
