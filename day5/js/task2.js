@@ -102,36 +102,37 @@ var rowDiv = document.getElementsByClassName('row-container');
 for(var i=0; i<TODOS.length;i++)
 {
     var div = document.createElement('div');
-div.setAttribute('class','card');
-var stats;
-if(TODOS[i]["isCompleted"]==true)
-    {
-        stats="&#9989;";
-    }
-    else{
-        stats="&#10060";
-    }
-div.innerHTML = `
-<div class="sub-card">
-<div class="card-header">
-    <div class="category"><p>${TODOS[i]["category"]}</p></div>
-    <div class="status"><p>${stats}</p></div>
-</div>
-<div class="card-info">
-    <p class="description">${TODOS[i]["description"]}</p>
-    
-</div>
-<div class="card-footer">
-    <div class="footer-info">
-        <img src="https://cdn-icons-png.flaticon.com/512/1380/1380370.png" alt="" srcset="">
-        <p class="chat">${TODOS[i]["chat"]}</p>
-        <img src="https://cdn0.iconfinder.com/data/icons/education-volume-1-3/48/04-512.png" alt="files" srcset="">
-        <p class="file">${TODOS[i]["file"]}</p>
-    </div>
-    <img class="user-profile"src="${TODOS[i%3]["usr1"]}" alt="">
-</div>
-</div>`;
-rowDiv[0].appendChild(div);
-console.log("TEST");
+    div.setAttribute('class','card');
+    var stats;
+    if(TODOS[i]["isCompleted"]==true)
+        {
+            stats="&#9989;";
+        }
+        else{
+            stats="&#10060";
+        }
+    div.innerHTML = `
+        <div class="sub-card">
+        <div class="card-header">
+            <div class="category"><p>${TODOS[i]["category"]}</p></div>
+            <div class="status"><p>${stats}</p></div>
+        </div>
+        <div class="card-info">
+            <p class="description">${TODOS[i]["description"]}</p>
+            
+        </div>
+        <div class="card-footer">
+            <div class="footer-info">
+                <img src="https://cdn-icons-png.flaticon.com/512/1380/1380370.png" alt="" srcset="">
+                <p class="chat">${TODOS[i]["chat"]}</p>
+                <img src="https://cdn0.iconfinder.com/data/icons/education-volume-1-3/48/04-512.png" alt="files" srcset="">
+                <p class="file">${TODOS[i]["file"]}</p>
+            </div>
+            <img class="user-profile"src="${TODOS[i%3]["usr1"]}" alt="">
+        </div>
+        </div>
+    `;
+    rowDiv[0].appendChild(div);
+    console.log("TEST");
 }
 
