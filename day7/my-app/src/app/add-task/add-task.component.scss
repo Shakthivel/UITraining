@@ -1,0 +1,25 @@
+.add-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.input-section{
+    input{
+        padding:10px;
+        margin:5px;
+        border-radius: 5px;
+        font-size: medium;
+    }
+}
+.button-section{
+    button{
+        background: none;
+        border:none;
+        color:white;
+        background-color: rgb(45, 102, 207);
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: large;
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todolistangular-d628f": {
+      "hosting": {
+        "my-app": [
+          "todolistangular-d628f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todolistangular-d628f"
+  }
+}

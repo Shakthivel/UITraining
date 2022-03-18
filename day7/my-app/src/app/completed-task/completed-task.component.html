@@ -1,0 +1,4 @@
+<app-task-card (completedTask)="addToPending($event)" 
+*ngFor="let task of completedTasks;let i=index;" [task] = ((completedTasks[i]))>
+
+</app-task-card>

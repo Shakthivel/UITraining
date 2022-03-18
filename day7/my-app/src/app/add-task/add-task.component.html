@@ -1,0 +1,13 @@
+<div class="add-section">
+    <div class="input-section">
+        <label for="desc" class="form-label"></label>
+      <input type="text"  #desc placeholder="Task" />
+      <label for="category" class="form-label"></label>
+      <input type="text"  #category placeholder="Category" />
+    </div>
+    <div class="button-section">
+        <button (click)="addToTODO(desc.value,category.value)">Add</button>
+    </div>
+    
+</div>
+

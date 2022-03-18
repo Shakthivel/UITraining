@@ -1,0 +1,49 @@
+.task-card{
+    margin:5px;
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid grey;
+    box-shadow: 3px 3px 5px grey;
+    .info{
+        flex:3;
+        margin:5px;
+        overflow: hidden;
+        p{
+            font-size: large;
+            font-weight: 500;
+        }
+    }
+    .date-section{
+        flex:1;
+        margin:5px;
+        overflow: auto;
+    }
+    .add-button{
+        flex:1;
+        margin:5px;
+        overflow: auto;
+        button{
+            border:none;
+            padding:5px 10px;
+            background-color:red;
+            color:white;
+            font-size: large;
+            border-radius: 10px;
+        }
+    }
+    .remove-button{
+        flex:1;
+        margin:5px;
+        button{
+            border:none;
+            padding:5px 10px;
+            background-color:green;
+            color:white;
+            font-size: large;
+            border-radius: 10px;
+        }
+    }
+}

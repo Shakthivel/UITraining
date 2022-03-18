@@ -1,0 +1,3 @@
+<app-task-card  (completedTask)="addCompleted($event)" 
+*ngFor="let todo of todos;let i=index;" [task] = ((todos[i]))>
+</app-task-card>
