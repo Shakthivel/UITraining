@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { map } from 'rxjs/operators';
 
 export interface Todo{
   desc:string
@@ -18,7 +20,7 @@ export class TodoService {
   private _completed  = new Subject<Todo[]>();
   readonly completed$ = this._completed.asObservable();
   completed: any[]=[];
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   addToTODO(task:any){
     var todo = {
@@ -27,24 +29,36 @@ export class TodoService {
       isCompleted:false,
       date:new Date()
     }
-    this.todos.push(todo);
-    console.log(this.todos);
-    this._todos.next(this.todos);
-    return this.todos;
+    return this.addToCollection("todoList",task);
   }
 
-  addToCompleted(task:any)
+  addToCompleted(taskId:string,task:any)
   {
-    this.todos = this.todos.filter(i=>i["desc"]!=task["desc"]);
+    this.removeFromCollection("todoList",taskId);
     task["isCompleted"] = !task["isCompleted"];
-    this.completed.push(task);
-    this._todos.next(this.todos);
-    this._completed.next(this.completed);
+    return this.addToCollection("completedList",task);
+
   }
 
-  removeFromCompleted(task:any)
+  addToCollection(collectionName:string,task:string)
   {
-    this.completed = this.completed.filter(i=>i["desc"]!=task["desc"]);
-    this._completed.next(this.completed);
+    return new Promise<any>((resolve, reject) =>{
+      this.firestore
+          .collection(collectionName)
+          .add(task)
+          .then(res => {}, err => reject(err));
+  });
+  }
+
+  removeFromCollection(collectionName:string,taskId:string)
+  {
+    this.firestore
+       .collection(collectionName)
+       .doc(taskId)
+       .delete();
+  }
+
+  readCollectionLists(collectionName:string){
+    return this.firestore.collection(collectionName).snapshotChanges();
   }
 }

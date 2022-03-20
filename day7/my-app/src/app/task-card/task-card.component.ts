@@ -13,16 +13,17 @@ export class TaskCardComponent implements OnInit {
 
 
 
+
   ngOnInit(): void {
   }
 
   addToCompleted(seletedTask:any){   
-    this.todoService.addToCompleted(seletedTask);
+    this.todoService.addToCompleted(this.task.payload.doc.id,this.task.payload.doc.data());
   }
 
   removeFromCompleted(selectedTask:any)
   {
-      this.todoService.removeFromCompleted(selectedTask);
+      this.todoService.removeFromCollection("completedList",this.task.payload.doc.id);
   }
 
 

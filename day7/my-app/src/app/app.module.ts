@@ -8,6 +8,12 @@ import { CompletedTaskComponent } from './completed-task/completed-task.componen
 import { PendingTaskComponent } from './pending-task/pending-task.component';
 import { TaskCardComponent } from './task-card/task-card.component';
 
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +24,9 @@ import { TaskCardComponent } from './task-card/task-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

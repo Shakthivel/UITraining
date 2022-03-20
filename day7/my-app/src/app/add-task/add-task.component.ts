@@ -23,6 +23,8 @@ export class AddTaskComponent implements OnInit {
       desc:desc,
       category:category,
     }
-    this.todoService.addToTODO(task);
+    this.todoService.addToTODO(task).then(res=>{
+      console.log(res);
+    });
   }
 }

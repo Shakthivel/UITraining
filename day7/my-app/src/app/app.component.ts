@@ -12,13 +12,11 @@ export class AppComponent implements OnInit,OnChanges{
   title = 'TO-DO';
   todos = Array();
   completedTasks = Array();
+  test = Array();
 
   constructor(private todoService: TodoService) {
-    this.todoService.todos$.subscribe(todos => this.todos = todos);
-    this.todoService.completed$.subscribe(completed=>this.completedTasks=completed);
-
-    console.log(this.completedTasks);
-    console.log(this.todos);
+    this.todoService.readCollectionLists("completedList").subscribe(res=> this.completedTasks=res);
+    this.todoService.readCollectionLists("todoList").subscribe(res=> this.todos=res);
    }
 
   ngOnChanges(changes: SimpleChanges): void {
