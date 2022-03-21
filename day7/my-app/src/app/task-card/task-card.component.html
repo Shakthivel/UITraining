@@ -1,16 +1,22 @@
-<div *ngIf="task.payload.doc.data()!=undefined" class="task-card" >
-    <div class="info" >
-        <p>{{task.payload.doc.data().desc}}</p>
+<div *ngIf="task!=undefined" class="task-card" >
+    <div class="category-section" [ngStyle]="{'backgroundColor':task.cardColor}">
+        <p>{{task.category.toUpperCase()}}</p>
+    </div>
+    <div class="info-section">
+        <div class="info" >
+            <p>{{task.desc}}</p>
+        </div>
+        <div *ngIf="task.isCompleted==false" class="remove-button">
+            <button  (click)="addToCompleted(task)">&#10004;</button>
+        </div>
+        <div *ngIf="task.isCompleted==true" class="add-button">
+            <button (click)="removeFromCompleted(task)">&#10006;</button>
+        </div>
     </div>
     <div class="date-section">
-        <p>{{task.payload.doc.data().date.toDate() | date:"shortDate"}}</p>
+        <p>{{task.date | date:"shortDate"}}</p>
     </div>
-    <div *ngIf="task.payload.doc.data().isCompleted==false" class="remove-button">
-        <button  (click)="addToCompleted(task)">&#10004;</button>
-    </div>
-    <div *ngIf="task.payload.doc.data().isCompleted==true" class="add-button">
-        <button (click)="removeFromCompleted(task)">&#10006;</button>
-    </div>
+
 </div>
        
 

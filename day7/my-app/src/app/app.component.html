@@ -34,16 +34,18 @@
         </div>
         <div class="category-section">
           <p id="heading"> Categories</p>
+          <app-category-component [category]=((categories)) (selectedCategory)="categorySelected($event)"></app-category-component>
         </div>
       </div>
       <div class="pending-section">
         <p id="heading"> Pending Task</p>
-        <app-pending-task  [todos]=((todos))  ></app-pending-task>
+        <app-pending-task *ngIf="!categoryClicked"  [todos]=((todos))  ></app-pending-task>
+        <app-pending-task *ngIf="categoryClicked"  [todos]=((filteredList(todos,selectedCategory)))  ></app-pending-task>
       </div>
       <div class="completed-section">
         <p id="heading"> Completed Task</p>
-        <app-completed-task [completedTasks]=((completedTasks))></app-completed-task>
-        
+        <app-completed-task *ngIf="!categoryClicked" [completedTasks]=((completedTasks))></app-completed-task>
+        <app-completed-task *ngIf="categoryClicked" [completedTasks]=((filteredList(completedTasks,selectedCategory)))></app-completed-task>
       </div>
 
     </div>

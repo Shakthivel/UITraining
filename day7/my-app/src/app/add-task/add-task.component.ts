@@ -21,10 +21,21 @@ export class AddTaskComponent implements OnInit {
   addToTODO(desc:string,category:string){
     var task = {
       desc:desc,
-      category:category,
+      category:category.toLowerCase(),
+      cardColor:this.getRandomColor(),
+      date:new Date(),
+      isCompleted:false,
     }
-    this.todoService.addToTODO(task).then(res=>{
-      console.log(res);
-    });
+    this.todoService.addToTODO(task);
+    this.todoService.addToCollection(`categoryList/${task.category}`,{category:task.category});
+  }
+
+ getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 }

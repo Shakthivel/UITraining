@@ -8,10 +8,8 @@ import { CompletedTaskComponent } from './completed-task/completed-task.componen
 import { PendingTaskComponent } from './pending-task/pending-task.component';
 import { TaskCardComponent } from './task-card/task-card.component';
 
-import { environment } from "../environments/environment";
-import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { HttpClientModule } from '@angular/common/http';
+import { CategoryComponentComponent } from './category-component/category-component.component';
 
 
 @NgModule({
@@ -20,13 +18,14 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     AddTaskComponent,
     CompletedTaskComponent,
     PendingTaskComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    CategoryComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

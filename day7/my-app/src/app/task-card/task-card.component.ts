@@ -18,12 +18,12 @@ export class TaskCardComponent implements OnInit {
   }
 
   addToCompleted(seletedTask:any){   
-    this.todoService.addToCompleted(this.task.payload.doc.id,this.task.payload.doc.data());
+    this.todoService.addToCompleted(this.task.id,this.task);
   }
 
   removeFromCompleted(selectedTask:any)
   {
-      this.todoService.removeFromCollection("completedList",this.task.payload.doc.id);
+      this.todoService.removeFromCollection("completedList",this.task.id);
   }
 
 

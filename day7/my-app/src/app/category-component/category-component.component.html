@@ -1,0 +1,8 @@
+<div class="card-container" *ngFor="let c of category;let i=index;">
+<div class="category-section">
+    {{c.id.toUpperCase()}}
+</div>
+<div class="button-section">
+    <button (click)="selectCategory(c.id)">&#8250;</button>
+</div>
+</div>
