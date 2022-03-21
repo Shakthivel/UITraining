@@ -12,12 +12,18 @@ export interface Todo{
 })
 export class TodoService {
 
+  user:any;
+
+  private _loginFlag  = new Subject<boolean>();
+  readonly loginFlag$ = this._loginFlag.asObservable();
+  loginFlag: boolean=false;
 
   private _todos  = new Subject<Todo[]>();
   readonly todos$ = this._todos.asObservable();
   todos: any[]=[];
 
   _base_url = "https://todolistangular-d628f-default-rtdb.firebaseio.com/";
+  _firebase_url = this._base_url;
 
   private _completed  = new Subject<Todo[]>();
   readonly completed$ = this._completed.asObservable();
@@ -44,12 +50,38 @@ export class TodoService {
   addToCollection(collectionName:string,task:any)
   {
     this.http.post(`${this._base_url+collectionName}.json`,task).subscribe((res)=>{
-      console.log(res);
+      this.user = res;
       this.readFromCompleted();
       this.readFromTODO();
       this.readFromCategory();
     });
+  }
 
+  register(user:any)
+  {
+    this.http.post(`${this._base_url}.json`,user).subscribe((res)=>{
+      this.user = res;
+      this._base_url += this.user.name+"/";
+    });
+  }
+
+  login(user:any){
+    console.log(user);
+    return this.http.get(`${this._firebase_url}.json`).subscribe((data:any)=>{
+      this.loginFlag = false;
+      if(data)
+      {
+        this.categories= Object.keys(data).map((key: any) => {
+          if(data[key].email == user.email && data[key].password == user.password)
+          {
+            this.loginFlag = true;
+            this._base_url += key+"/";
+            return data[key];
+          }
+        });
+      }
+      this._loginFlag.next(this.loginFlag);
+    });
   }
 
   removeFromCollection(collectionName:string,taskId:string)
@@ -102,7 +134,7 @@ export class TodoService {
           return data[key];
         });
       }
-      console.log(this.categories)
+
       this._categories.next(this.categories);
     });
   }

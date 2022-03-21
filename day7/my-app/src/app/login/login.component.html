@@ -1,3 +1,51 @@
-<div class="login-section">
-    <h1>Login</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-section">
+        <div class="left-section">
+            <img src="https://office.hivedesk.com/assets/img/illustrations/login-illustrator.jpg">
+        </div>
+        <div class="right-section">
+            <div class="heading">
+                <p>Sign in to your account!!</p>
+            </div>
+            <form autocomplete="off" #signInForm="ngForm" (ngSubmit)="loginIn(signInForm)" >
+                <div class="email-section division">
+                    <div class="label-section">
+                        <label>
+                            Email:
+                         </label>
+                    </div>
+                    <div class="input-section">
+                        <input name="email" type="email" [(ngModel)]="email">
+                    </div>
+                </div>
+                <div class="password-section division">
+                    <div class="label-section">
+                        <label>
+                            Password:
+                        </label>
+                    </div>
+                    <div class="input-section">
+                        <input name="password" type="password" [(ngModel)]="password">
+                    </div>
+    
+                </div>
+                <div class="button-section">
+                    <button type="submit"> Submit</button>
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+    
+</body>
+</html>l

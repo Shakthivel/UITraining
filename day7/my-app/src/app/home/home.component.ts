@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     if(this.selectedCategory == selectedCategory)
     {
       this.categoryClicked = false;
+      this.selectedCategory="";
     }
     else{
       this.categoryClicked = true;
