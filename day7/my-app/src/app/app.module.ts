@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { CompletedTaskComponent } from './completed-task/completed-task.component';
@@ -10,6 +10,9 @@ import { TaskCardComponent } from './task-card/task-card.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CategoryComponentComponent } from './category-component/category-component.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -19,15 +22,17 @@ import { CategoryComponentComponent } from './category-component/category-compon
     CompletedTaskComponent,
     PendingTaskComponent,
     TaskCardComponent,
-    CategoryComponentComponent
+    CategoryComponentComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-
+    HttpClientModule, 
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
